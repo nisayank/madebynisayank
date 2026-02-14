@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💕 Selamat Hari Valentine 💕</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff6b9d 0%, #ffa502 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 50px 40px;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: slideIn 0.8s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .heart-title {
+            font-size: 48px;
+            margin-bottom: 20px;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            25% {
+                transform: scale(1.1);
+            }
+            50% {
+                transform: scale(1);
+            }
+        }
+
+        h1 {
+            color: #ff1744;
+            font-size: 42px;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(255, 23, 68, 0.2);
+        }
+
+        .subtitle {
+            color: #d32f2f;
+            font-size: 24px;
+            margin-bottom: 40px;
+            font-weight: bold;
+        }
+
+        .message {
+            color: #333;
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .hearts-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .heart {
+            font-size: 40px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .heart:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .heart:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        .heart:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        button {
+            background: linear-gradient(135deg, #ff6b9d 0%, #ff1744 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(255, 23, 68, 0.3);
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 23, 68, 0.4);
+        }
+
+        button:active {
+            transform: translateY(-1px);
+        }
+
+        .special-message {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border-left: 5px solid #ff6b9d;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 10px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .confetti {
+            position: fixed;
+            pointer-events: none;
+        }
+
+        .sparkle {
+            display: inline-block;
+            margin: 0 5px;
+            color: #ff1744;
+            font-size: 14px;
+        }
+
+        .footer {
+            margin-top: 30px;
+            color: #999;
+            font-size: 14px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 30px;
+            border: 1px solid #888;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            animation: slideIn 0.4s;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #000;
+        }
+
+        .modal h2 {
+            color: #ff1744;
+            margin-bottom: 20px;
+        }
+
+        .modal p {
+            color: #555;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heart-title">💘</div>
+        <h1>Selamat Hari Valentine</h1>
+        <div class="subtitle">Sayangku 💕</div>
+
+        <div class="hearts-container">
+            <div class="heart">💗</div>
+            <div class="heart">💖</div>
+            <div class="heart">💝</div>
+        </div>
+
+        <p class="message">
+            "Thanks for coloring my life."
+        </p>
+
+        <div class="button-group">
+            <button onclick="showLove()">💌 Pesan Cinta</button>
+            <button onclick="showSurprise()">🎁 Kejutan</button>
+            <button onclick="createConfetti()">✨ Rayakan!</button>
+        </div>
+
+        <div class="special-message">
+            <strong>💞 Open me! 💞</strong>
+            <p style="margin-top: 10px;">
+                Ketemu kamu adalah sesuatu hal yg gapernah aku sangka., 
+                Thanks for coming and staying. 
+                I dont know how to describe you but i really grateful to know you. 
+                I love you. ❤️
+            </p>
+        </div>
+
+        <div class="footer">
+            <span class="sparkle">✨</span>
+            Made with love.
+            <span class="sparkle">✨</span>
+        </div>
+    </div>
+
+    <!-- Modal untuk Pesan Cinta -->
+    <div id="loveModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoveModal()">&times;</span>
+            <h2>💌 Love Letter For You</h2>
+            <p>
+                Sayang, terima kasih udah ada di dunia ini ya. Terima kasih juga karena selalu ada. I love you.
+            </p>
+            <p style="margin-top: 15px;">
+                Things i love about you:
+                <br>✨ Aku suka waktu kamu dengerin aku
+                <br>✨ Aku suka waktu kamu manja dan rewel ke aku
+                <br>✨ Aku suka kalo kamu nasehatin aku
+                <br>✨ Aku suka semua apa pun tentang kamu, Adrian.
+            </p>
+            <p style="margin-top: 15px; font-weight: bold; color: #ff1744;">
+                Kalo kata lirik lagu Repeat Until Death; "Dont go, youre half of me now." 💕
+            </p>
+        </div>
+    </div>
+
+    <!-- Modal untuk Kejutan -->
+    <div id="surpriseModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeSurpriseModal()">&times;</span>
+            <h2>🎁 Kejutan Untukmu!</h2>
+            <p style="font-size: 32px; margin: 20px 0;">💝 🌹 🍫 💐</p>
+            <p>
+                You deserve to get something really best in your life. And let me try my best everytime for you. Be my valentine, please?
+            </p>
+            <p style="margin-top: 15px;">
+                <strong>Ide Kejutan:</strong>
+                <br>🌹 Bunga segar untukmu
+                <br>🍽️ Makan malam romantis
+                <br>🎬 Menonton film favorit bersama
+                <br>💌 Surat cinta yang dibuat dengan tangan
+                <br>🎵 Lagu spesial hanya untukmu
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Fungsi menampilkan modal pesan cinta
+        function showLove() {
+            document.getElementById("loveModal").style.display = "block";
+        }
+
+        function closeLoveModal() {
+            document.getElementById("loveModal").style.display = "none";
+        }
+
+        // Fungsi menampilkan modal kejutan
+        function showSurprise() {
+            document.getElementById("surpriseModal").style.display = "block";
+        }
+
+        function closeSurpriseModal() {
+            document.getElementById("surpriseModal").style.display = "none";
+        }
+
+        // Tutup modal jika klik di luar area modal
+        window.onclick = function(event) {
+            let loveModal = document.getElementById("loveModal");
+            let surpriseModal = document.getElementById("surpriseModal");
+            if (event.target == loveModal) {
+                loveModal.style.display = "none";
+            }
+            if (event.target == surpriseModal) {
+                surpriseModal.style.display = "none";
+            }
+        }
+
+        // Fungsi membuat confetti
+        function createConfetti() {
+            const colors = ['💕', '💖', '💗', '💘', '💝', '🌹', '✨'];
+            
+            for (let i = 0; i < 30; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.innerHTML = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.top = '-10px';
+                confetti.style.fontSize = Math.random() * 20 + 15 + 'px';
+                confetti.style.opacity = Math.random() * 0.5 + 0.5;
+                
+                document.body.appendChild(confetti);
+                
+                // Animasi jatuh
+                let top = -10;
+                let left = confetti.offsetLeft;
+                let velocity = Math.random() * 5 + 2;
+                let randomX = Math.random() * 4 - 2;
+                
+                const fall = setInterval(() => {
+                    top += velocity;
+                    left += randomX;
+                    confetti.style.top = top + 'px';
+                    confetti.style.left = left + 'px';
+                    confetti.style.opacity -= 0.01;
+                    
+                    if (top > window.innerHeight) {
+                        clearInterval(fall);
+                        confetti.remove();
+                    }
+                }, 30);
+            }
+        }
+
+        // Buat confetti otomatis saat halaman dimuat
+        window.addEventListener('load', () => {
+            setTimeout(createConfetti, 500);
+        });
+    </script>
+</body>
+</html>
